@@ -1,0 +1,110 @@
+name: HelloDev 日报发布流程
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'articles/**'
+  workflow_dispatch:
+
+jobs:
+  detect-changes:
+    runs-on: ubuntu-latest
+    outputs:
+      has-changes: ${{ steps.changes.outputs.has-changes }}
+      changed-articles: ${{ steps.changes.outputs.changed-articles }}
+    
+    steps:
+    - name: 检出代码
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 2
+    
+    - name: 检测文章变更
+      id: changes
+      run: |
+        # 检测新增或修改的文章
+        CHANGED_FILES=$(git diff --name-only HEAD~1 HEAD | grep "articles/.*index\.md" || true)
+        
+        if [ -n "$CHANGED_FILES" ]; then
+          echo "has-changes=true" >> $GITHUB_OUTPUT
+          echo "changed-articles=$CHANGED_FILES" >> $GITHUB_OUTPUT
+          echo "检测到文章变更:"
+          echo "$CHANGED_FILES"
+        else
+          echo "has-changes=false" >> $GITHUB_OUTPUT
+          echo "未检测到文章变更"
+        fi
+
+  publish-platforms:
+    needs: detect-changes
+    if: needs.detect-changes.outputs.has-changes == 'true'
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 检出代码
+      uses: actions/checkout@v4
+    
+    - name: 设置 Python 环境
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: 安装依赖
+      run: |
+        pip install -r requirements.txt
+    
+    - name: 创建发布摘要
+      run: |
+        python scripts/create_summary.py "${{ needs.detect-changes.outputs.changed-articles }}"
+    
+    - name: 发布到微信公众号
+      env:
+        WECHAT_APP_ID: ${{ secrets.WECHAT_APP_ID }}
+        WECHAT_APP_SECRET: ${{ secrets.WECHAT_APP_SECRET }}
+      run: |
+        python scripts/wechat_publisher.py
+    
+    - name: 发布到掘金
+      env:
+        JUEJIN_SESSION_ID: ${{ secrets.JUEJIN_SESSION_ID }}
+        JUEJIN_CSRF_TOKEN: ${{ secrets.JUEJIN_CSRF_TOKEN }}
+      run: |
+        python scripts/juejin_publisher.py
+        
+    - name: 发布到知乎
+      env:
+        ZHIHU_USERNAME: ${{ secrets.ZHIHU_USERNAME }}
+        ZHIHU_PASSWORD: ${{ secrets.ZHIHU_PASSWORD }}
+      run: |
+        python scripts/zhihu_publisher.py
+    
+    - name: 更新发布记录
+      run: |
+        python scripts/update_published_record.py
+        
+    - name: 提交发布记录更新
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add config/published.json
+        git commit -m "📊 更新发布记录: $(date '+%Y-%m-%d %H:%M:%S')" || exit 0
+        git push
+
+  notify-completion:
+    needs: [detect-changes, publish-platforms]
+    if: always()
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 发送成功通知
+      if: needs.publish-platforms.result == 'success'
+      run: |
+        echo "🎉 HelloDev 日报发布成功!"
+        echo "📝 已发布文章: ${{ needs.detect-changes.outputs.changed-articles }}"
+        
+    - name: 发送失败通知
+      if: needs.publish-platforms.result == 'failure'
+      run: |
+        echo "❌ HelloDev 日报发布失败!"
+        echo "🔍 请检查日志排查问题"

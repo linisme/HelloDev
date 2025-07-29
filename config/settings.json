@@ -1,0 +1,75 @@
+{
+  "project": {
+    "name": "HelloDev 开发者日报",
+    "description": "每日精选开发者技术资讯",
+    "website": "https://github.com/HelloDev-Official/HelloDev",
+    "contact_email": "hello@hellodev.cn"
+  },
+  "publishing": {
+    "platforms": {
+      "wechat": {
+        "enabled": true,
+        "account_name": "HelloDev开发者日报",
+        "auto_publish": false,
+        "draft_mode": true
+      },
+      "juejin": {
+        "enabled": true,
+        "username": "HelloDev",
+        "auto_publish": false,
+        "tags": ["开发者工具", "技术资讯", "开源项目"]
+      },
+      "zhihu": {
+        "enabled": true,
+        "column": "HelloDev专栏",
+        "auto_publish": false,
+        "topic_tags": ["程序员", "开发工具", "技术分享"]
+      },
+      "github": {
+        "enabled": true,
+        "auto_commit": true,
+        "commit_message_template": "📅 发布日报: {date} HelloDev开发者日报"
+      }
+    },
+    "schedule": {
+      "auto_publish_time": "09:00",
+      "timezone": "Asia/Shanghai",
+      "weekdays_only": false
+    }
+  },
+  "content": {
+    "image_processing": {
+      "max_width": 1200,
+      "max_height": 800,
+      "quality": 85,
+      "format": "JPEG",
+      "thumbnail_size": [400, 300]
+    },
+    "article_limits": {
+      "max_images_per_article": 20,
+      "max_content_length": 50000,
+      "min_content_length": 1000
+    }
+  },
+  "notifications": {
+    "success": {
+      "enabled": true,
+      "channels": ["github_issues"]
+    },
+    "error": {
+      "enabled": true,
+      "channels": ["github_issues", "email"]
+    }
+  },
+  "social_media": {
+    "hashtags": {
+      "primary": ["HelloDev", "开发者日报", "技术资讯"],
+      "secondary": ["开源项目", "开发工具", "程序员"]
+    },
+    "mentions": {
+      "wechat": [],
+      "juejin": ["@HelloDev"],
+      "zhihu": []
+    }
+  }
+}

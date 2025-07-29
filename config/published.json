@@ -1,0 +1,41 @@
+{
+  "metadata": {
+    "project": "HelloDev 开发者日报",
+    "created_at": "2025-01-29T00:00:00Z",
+    "last_updated": "2025-01-29T00:00:00Z",
+    "version": "1.0.0"
+  },
+  "published_articles": [],
+  "statistics": {
+    "total_articles": 0,
+    "total_platforms": 4,
+    "success_rate": 0,
+    "last_30_days": {
+      "articles_count": 0,
+      "platforms_reached": 0,
+      "engagement_total": 0
+    }
+  },
+  "platform_status": {
+    "wechat": {
+      "status": "ready",
+      "last_publish": null,
+      "total_published": 0
+    },
+    "juejin": {
+      "status": "ready", 
+      "last_publish": null,
+      "total_published": 0
+    },
+    "zhihu": {
+      "status": "ready",
+      "last_publish": null,
+      "total_published": 0
+    },
+    "github": {
+      "status": "active",
+      "last_publish": null,
+      "total_published": 0
+    }
+  }
+}

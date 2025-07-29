@@ -1,0 +1,20 @@
+[project]
+name = "hellodev-website"
+version = "0.1.0"
+description = "HelloDev 开发者日报网站发布系统"
+dependencies = [
+    "markdown>=3.7",
+    "pillow>=10.4.0",
+    "pygments>=2.19.2",
+    "requests>=2.32.4",
+    "beautifulsoup4>=4.12.0",
+    "python-frontmatter>=1.1.0",
+]
+requires-python = ">=3.8"
+
+[tool.uv]
+dev-dependencies = [
+    "black>=24.8.0",
+    "isort>=5.13.2",
+    "pytest>=8.3.5",
+]
