@@ -1,0 +1,188 @@
+/* HelloDev 微信公众号专用样式 */
+body { 
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei", Arial, sans-serif; 
+    font-size: 16px; 
+    line-height: 1.6; 
+    color: #333; 
+    margin: 0; 
+    padding: 20px;
+}
+
+/* HelloDev 品牌色彩 - 标题样式 */
+h1 { 
+    font-size: 1.8em; 
+    font-weight: bold; 
+    color: #1a365d; 
+    border-bottom: 3px solid #4299e1; 
+    padding-bottom: 0.3em; 
+    margin: 1.5em 0 1em 0;
+}
+
+h2 { 
+    font-size: 1.5em; 
+    font-weight: bold; 
+    color: #2d3748; 
+    border-left: 4px solid #4299e1; 
+    padding-left: 0.5em; 
+    margin: 1.3em 0 0.8em 0;
+}
+
+h3 { 
+    font-size: 1.3em; 
+    font-weight: bold; 
+    color: #e53e3e; 
+    margin: 1.2em 0 0.6em 0;
+}
+
+/* 段落样式 */
+p { 
+    margin: 1em 0; 
+    text-align: justify; 
+    line-height: 1.8;
+}
+
+/* 代码样式 */
+code { 
+    background-color: #f7fafc; 
+    padding: 2px 6px; 
+    border-radius: 4px; 
+    font-family: 'Fira Code', Consolas, Monaco, monospace; 
+    color: #e53e3e; 
+    font-size: 0.9em;
+}
+
+pre { 
+    background-color: #f7fafc; 
+    padding: 1.2em; 
+    border-radius: 8px; 
+    overflow-x: auto; 
+    border-left: 4px solid #4299e1; 
+    margin: 1.5em 0;
+    line-height: 1.4;
+}
+
+pre code { 
+    background-color: transparent; 
+    padding: 0; 
+    color: #333; 
+    font-size: 0.9em;
+}
+
+/* HelloDev 特色引用样式 */
+blockquote { 
+    border-left: 4px solid #38b2ac; 
+    margin: 1.5em 0; 
+    padding: 0.5em 1.2em; 
+    background-color: #f0fff4; 
+    font-style: italic; 
+    color: #2d3748;
+}
+
+/* 列表样式 */
+ul, ol { 
+    margin: 1em 0; 
+    padding-left: 2em; 
+}
+
+li { 
+    margin: 0.5em 0; 
+    line-height: 1.6;
+}
+
+/* 开发者友好的表格样式 */
+table { 
+    border-collapse: collapse; 
+    width: 100%; 
+    margin: 1.5em 0; 
+    font-size: 0.9em;
+}
+
+th, td { 
+    border: 1px solid #ddd; 
+    padding: 10px 12px; 
+    text-align: left; 
+}
+
+th { 
+    background-color: #4299e1; 
+    color: white; 
+    font-weight: bold; 
+}
+
+tr:nth-child(even) { 
+    background-color: #f8f9fa; 
+}
+
+/* 图片样式 */
+img { 
+    max-width: 100%; 
+    height: auto; 
+    border-radius: 8px; 
+    margin: 1em 0; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* 链接样式 */
+a { 
+    color: #4299e1; 
+    text-decoration: none; 
+}
+
+a:hover { 
+    text-decoration: underline; 
+}
+
+/* 分割线 */
+hr { 
+    border: none; 
+    height: 1px; 
+    background-color: #ddd; 
+    margin: 2em 0; 
+}
+
+/* 强调样式 */
+strong, b {
+    color: #1a365d;
+    font-weight: 600;
+}
+
+em, i {
+    color: #38b2ac;
+    font-style: italic;
+}
+
+/* 技术栈标签样式 */
+.tech-tag {
+    display: inline-block;
+    background-color: #4299e1;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    margin: 2px;
+}
+
+/* 警告框样式 */
+.warning {
+    background-color: #fed7d7;
+    border-left: 4px solid #e53e3e;
+    padding: 1em;
+    margin: 1.5em 0;
+    border-radius: 4px;
+}
+
+.info {
+    background-color: #bee3f8;
+    border-left: 4px solid #4299e1;
+    padding: 1em;
+    margin: 1.5em 0;
+    border-radius: 4px;
+}
+
+.success {
+    background-color: #c6f6d5;
+    border-left: 4px solid #38a169;
+    padding: 1em;
+    margin: 1.5em 0;
+    border-radius: 4px;
+}
