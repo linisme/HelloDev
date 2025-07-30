@@ -130,11 +130,18 @@ class ZhihuPublisher:
 
 def main():
     """主函数"""
+    publish_result = {
+        'success': False,
+        'message': '',
+        'details': []
+    }
+    
     try:
         # 检查摘要文件
-        summary_file = Path('publish_summary.json')
+        summary_file = Path('config/latest_summary.json')
         if not summary_file.exists():
-            print("未找到发布摘要文件，跳过知乎发布")
+            publish_result['message'] = "未找到发布摘要文件，跳过知乎发布"
+            print(publish_result['message'])
             return
         
         with open(summary_file, 'r', encoding='utf-8') as f:
@@ -142,19 +149,52 @@ def main():
         
         publisher = ZhihuPublisher()
         
-        for article in summary.get('articles', []):
-            print(f"\n📝 正在发布到知乎: {article['title']}")
-            result = publisher.publish_article_from_summary(
-                article['path'], 
-                article['title']
-            )
-            print(f"✅ 知乎发布成功！article_id: {result['article_id']}")
-            time.sleep(5)  # 避免频率限制
+        success_count = 0
+        articles = summary.get('articles', [])
+        
+        for article in articles:
+            try:
+                print(f"\n📝 正在发布到知乎: {article['title']}")
+                result = publisher.publish_article_from_summary(
+                    article['path'], 
+                    article['title']
+                )
+                print(f"✅ 知乎发布成功！article_id: {result['article_id']}")
+                publish_result['details'].append({
+                    'title': article['title'],
+                    'success': True,
+                    'article_id': result['article_id']
+                })
+                success_count += 1
+                time.sleep(5)  # 避免频率限制
+            except Exception as e:
+                print(f"❌ 文章 {article['title']} 发布失败: {e}")
+                publish_result['details'].append({
+                    'title': article['title'],
+                    'success': False,
+                    'error': str(e)
+                })
+        
+        publish_result['success'] = success_count > 0
+        publish_result['message'] = f"成功发布 {success_count}/{len(articles)} 篇文章"
             
     except ValueError as e:
-        print(f"⚠️  {e}")
+        # 未配置认证信息
+        publish_result['message'] = str(e)
+        print(f"⏭️ 跳过知乎发布: {e}")
     except Exception as e:
+        publish_result['message'] = f"发布失败: {e}"
         print(f"❌ 知乎发布失败: {e}")
+    
+    finally:
+        # 保存发布结果
+        result_file = Path('config/zhihu_result.json')
+        result_file.parent.mkdir(exist_ok=True)
+        with open(result_file, 'w', encoding='utf-8') as f:
+            json.dump(publish_result, f, indent=2, ensure_ascii=False)
+        
+        if not publish_result['success'] and '未配置认证信息' not in publish_result['message']:
+            exit(1)
 
 if __name__ == "__main__":
     main()

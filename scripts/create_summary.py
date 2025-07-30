@@ -172,25 +172,93 @@ def save_summary_files(article_info: Dict, summary: Dict, social_summaries: Dict
     print(f"📄 摘要已保存: {summary_file}")
 
 
+def create_article_info_from_path(article_path: str) -> Optional[Dict]:
+    """从文章路径创建文章信息"""
+    if not os.path.exists(article_path):
+        print(f"❌ 文章文件不存在: {article_path}")
+        return None
+    
+    try:
+        with open(article_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+        
+        # 提取标题
+        title = None
+        for line in content.split('\n'):
+            if line.startswith('# '):
+                title = line[2:].strip()
+                break
+        
+        # 从路径提取日期
+        path_parts = article_path.split('/')
+        if len(path_parts) >= 3:
+            date_part = path_parts[2]  # 格式如 07-31
+            year = path_parts[1]       # 格式如 2025
+            date_str = f"{year}-{date_part}"
+        else:
+            date_str = datetime.now().strftime("%Y-%m-%d")
+        
+        # 检查图片和缩略图
+        article_dir = os.path.dirname(article_path)
+        has_images = os.path.exists(os.path.join(article_dir, 'images'))
+        has_thumb = os.path.exists(os.path.join(article_dir, 'thumb.jpg'))
+        
+        return {
+            'path': article_path,
+            'title': title or '未知标题',
+            'date': date_str,
+            'has_images': has_images,
+            'has_thumb': has_thumb,
+            'content_length': len(content),
+            'detected_at': datetime.now().isoformat()
+        }
+    
+    except Exception as e:
+        print(f"❌ 解析文章信息失败: {article_path}, 错误: {e}")
+        return None
+
+
 def main():
     """主函数"""
+    import sys
+    
     print("📝 HelloDev 发布摘要生成开始...")
     
-    # 读取最新变更信息
-    changes_file = 'config/latest_changes.json'
-    if not os.path.exists(changes_file):
-        print("❌ 未找到变更信息文件，请先运行 detect_changes.py")
-        return
-    
-    with open(changes_file, 'r', encoding='utf-8') as f:
-        changes_data = json.load(f)
-    
-    if not changes_data.get('articles'):
-        print("📰 未发现需要处理的文章")
-        return
+    # 检查是否有命令行参数
+    if len(sys.argv) > 1:
+        # 直接处理命令行指定的文章
+        article_paths = sys.argv[1].strip().split()
+        articles_info = []
+        
+        for article_path in article_paths:
+            article_path = article_path.strip()
+            if article_path:
+                info = create_article_info_from_path(article_path)
+                if info:
+                    articles_info.append(info)
+        
+        if not articles_info:
+            print("❌ 未能解析任何有效的文章")
+            return
+            
+    else:
+        # 从配置文件读取变更信息（原有逻辑）
+        changes_file = 'config/latest_changes.json'
+        if not os.path.exists(changes_file):
+            print("❌ 未找到变更信息文件，请先运行 detect_changes.py 或提供文章路径参数")
+            return
+        
+        with open(changes_file, 'r', encoding='utf-8') as f:
+            changes_data = json.load(f)
+        
+        if not changes_data.get('articles'):
+            print("📰 未发现需要处理的文章")
+            return
+            
+        articles_info = changes_data['articles']
     
     # 处理每篇文章
-    for article_info in changes_data['articles']:
+    for article_info in articles_info:
         article_path = article_info['path']
         print(f"📄 处理文章: {article_info['title']}")
         
