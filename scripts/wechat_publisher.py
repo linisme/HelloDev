@@ -278,8 +278,8 @@ class WeChatPublisher:
         file_path = Path(article_path)
         article_dir = file_path.parent
         
-        # 处理标题长度限制
-        title = self.truncate_text(title, max_length=24, field_name="标题")
+        # 处理标题长度限制（微信上限64字符）
+        title = self.truncate_text(title, max_length=64, field_name="标题")
         
         # 读取文章内容
         with open(file_path, 'r', encoding='utf-8') as f:
@@ -292,8 +292,8 @@ class WeChatPublisher:
         content_text = re.sub(r'[#*`\[\]()]', '', markdown_content)
         digest = content_text[:100].strip() + "..." if len(content_text) > 100 else content_text
         
-        # 限制摘要长度为24个字符
-        digest = self.truncate_text(digest, max_length=24, field_name="摘要")
+        # 限制摘要长度（微信上限120字符）
+        digest = self.truncate_text(digest, max_length=120, field_name="摘要")
         
         # 查找缩略图
         thumb_media_id = ""
