@@ -87,7 +87,7 @@ class WeChatPublisher:
             'pre code': 'background-color: transparent; padding: 0; color: #2d3748; font-size: 13px; letter-spacing: 0px;',
             'strong': 'color: #1a202c; font-weight: 600; letter-spacing: 0.2px;',
             'em': 'color: #4299e1; font-style: normal; font-weight: 500; letter-spacing: 0.1px;',
-            'img': 'max-width: 100%; height: auto; border-radius: 6px; margin: 28px 0; display: block; box-shadow: 0 4px 20px rgba(0,0,0,0.08);',
+            'img': 'max-width: 100%; height: auto; border-radius: 6px; margin: 28px auto; display: block; box-shadow: 0 4px 20px rgba(0,0,0,0.08);',
             'table': 'border-collapse: collapse; width: 100%; margin: 28px 0; font-size: 14px; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);',
             'th': 'border: none; padding: 16px 20px; text-align: left; background-color: #f8fafc; color: #2d3748; font-weight: 600; letter-spacing: 0.2px;',
             'td': 'border: none; border-bottom: 1px solid #e2e8f0; padding: 16px 20px; text-align: left; color: #2c3e50; letter-spacing: 0.2px;',
