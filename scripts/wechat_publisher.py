@@ -70,15 +70,64 @@ class WeChatPublisher:
             print(f"❌ 缩略图上传失败: {result}")
             raise Exception(f"缩略图上传失败: {result}")
     
-    def load_wechat_styles(self):
-        """加载微信公众号样式"""
-        styles_path = Path(__file__).parent.parent / 'styles' / 'wechat_styles.css'
-        if styles_path.exists():
-            with open(styles_path, 'r', encoding='utf-8') as f:
-                return f"<style>\n{f.read()}\n</style>"
-        else:
-            print("⚠️  样式文件不存在，使用默认样式")
-            return "<style>body { font-family: sans-serif; }</style>"
+    def get_inline_styles(self):
+        """获取内联样式映射（微信公众号不支持style标签）"""
+        return {
+            'body': 'font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei", Arial, sans-serif; font-size: 15px; line-height: 1.75; letter-spacing: 0.5px; color: #333333; word-spacing: 1px;',
+            'h1': 'font-size: 20px; font-weight: 600; color: #1a365d; border-bottom: 3px solid #4299e1; padding-bottom: 8px; margin: 32px 0 20px 0; line-height: 1.4; letter-spacing: 0.8px;',
+            'h2': 'font-size: 18px; font-weight: 600; color: #2d3748; border-left: 4px solid #4299e1; padding-left: 12px; margin: 28px 0 16px 0; line-height: 1.4; letter-spacing: 0.6px;',
+            'h3': 'font-size: 16px; font-weight: 600; color: #e53e3e; margin: 24px 0 12px 0; line-height: 1.4; letter-spacing: 0.4px;',
+            'p': 'margin: 20px 0; text-align: justify; line-height: 1.75; letter-spacing: 0.5px; word-spacing: 1px; color: #333333;',
+            'ul': 'margin: 20px 0; padding-left: 24px;',
+            'ol': 'margin: 20px 0; padding-left: 24px;',
+            'li': 'margin: 8px 0; line-height: 1.75; color: #333333; letter-spacing: 0.5px;',
+            'blockquote': 'border-left: 4px solid #38b2ac; margin: 24px 0; padding: 16px 20px; background-color: #f0fff4; font-style: italic; color: #2d3748; border-radius: 6px; letter-spacing: 0.3px; line-height: 1.75;',
+            'code': 'background-color: #f7fafc; padding: 3px 8px; border-radius: 4px; font-family: "Fira Code", Consolas, Monaco, monospace; color: #e53e3e; font-size: 14px; letter-spacing: 0.2px;',
+            'pre': 'background-color: #f7fafc; padding: 20px; border-radius: 8px; overflow-x: auto; border-left: 4px solid #4299e1; margin: 24px 0; line-height: 1.5;',
+            'pre code': 'background-color: transparent; padding: 0; color: #333333; font-size: 14px; letter-spacing: 0.2px;',
+            'strong': 'color: #1a365d; font-weight: 600; letter-spacing: 0.3px;',
+            'em': 'color: #38b2ac; font-style: italic; letter-spacing: 0.2px;',
+            'img': 'max-width: 100%; height: auto; border-radius: 8px; margin: 24px 0; box-shadow: 0 2px 12px rgba(0,0,0,0.12); display: block;',
+            'table': 'border-collapse: collapse; width: 100%; margin: 24px 0; font-size: 14px; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08);',
+            'th': 'border: 1px solid #e2e8f0; padding: 12px 16px; text-align: left; background-color: #4299e1; color: white; font-weight: 600;',
+            'td': 'border: 1px solid #e2e8f0; padding: 12px 16px; text-align: left; color: #333333; letter-spacing: 0.3px;',
+            'hr': 'border: none; height: 1px; background-color: #e2e8f0; margin: 32px 0; border-radius: 1px;'
+        }
+    
+    def apply_inline_styles(self, html):
+        """将CSS样式转换为内联样式（微信公众号兼容）"""
+        from bs4 import BeautifulSoup
+        
+        try:
+            soup = BeautifulSoup(html, 'html.parser')
+            styles = self.get_inline_styles()
+            
+            # 应用样式到各个标签
+            for tag_name, style in styles.items():
+                if tag_name == 'pre code':
+                    # 特殊处理 pre code
+                    for pre in soup.find_all('pre'):
+                        for code in pre.find_all('code'):
+                            code['style'] = style
+                else:
+                    for tag in soup.find_all(tag_name):
+                        tag['style'] = style
+            
+            # 特殊处理表格奇偶行样式
+            for table in soup.find_all('table'):
+                rows = table.find_all('tr')
+                for i, row in enumerate(rows):
+                    if i % 2 == 0 and i > 0:  # 偶数行（跳过表头）
+                        row['style'] = 'background-color: #f8f9fa;'
+            
+            return str(soup)
+            
+        except ImportError:
+            print("⚠️  BeautifulSoup4 未安装，无法应用内联样式")
+            return html
+        except Exception as e:
+            print(f"⚠️  应用内联样式失败: {e}")
+            return html
     
     def process_markdown_content(self, markdown_content, article_dir):
         """处理Markdown内容，上传图片并转换HTML"""
@@ -93,12 +142,16 @@ class WeChatPublisher:
                 if full_path.exists():
                     try:
                         wx_url = self.upload_image(str(full_path))
-                        return f'<img src="{wx_url}" alt="{img_alt}" style="width: 100%; height: auto;">'
+                        # 使用内联样式
+                        img_style = self.get_inline_styles()['img']
+                        return f'<img src="{wx_url}" alt="{img_alt}" style="{img_style}">'
                     except Exception as e:
                         print(f"⚠️  图片上传失败 {img_path}: {e}")
                         return f'<p>[图片上传失败: {img_alt}]</p>'
             
-            return f'<img src="{img_path}" alt="{img_alt}" style="width: 100%; height: auto;">'
+            # 使用内联样式
+            img_style = self.get_inline_styles()['img']
+            return f'<img src="{img_path}" alt="{img_alt}" style="{img_style}">'
         
         # 替换图片
         markdown_content = re.sub(r'!\[(.*?)\]\((.*?)\)', replace_images, markdown_content)
@@ -115,9 +168,12 @@ class WeChatPublisher:
             }
         )
         
-        # 添加样式
-        styles = self.load_wechat_styles()
-        return styles + html
+        # 应用内联样式（微信公众号兼容）
+        html_with_styles = self.apply_inline_styles(html)
+        
+        # 包装在一个带样式的div中
+        body_style = self.get_inline_styles()['body']
+        return f'<div style="{body_style}">{html_with_styles}</div>'
     
     def create_draft(self, title, content, author, digest, thumb_media_id, source_url):
         """创建草稿"""
