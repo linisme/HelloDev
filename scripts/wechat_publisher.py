@@ -99,6 +99,7 @@ class WeChatPublisher:
         from bs4 import BeautifulSoup
         
         try:
+            # 使用lxml-xml解析器保持更好的HTML结构
             soup = BeautifulSoup(html, 'html.parser')
             styles = self.get_inline_styles()
             
@@ -111,19 +112,29 @@ class WeChatPublisher:
                             code['style'] = style
                 else:
                     for tag in soup.find_all(tag_name):
-                        tag['style'] = style
+                        # 保持现有style属性，合并新样式
+                        existing_style = tag.get('style', '')
+                        if existing_style:
+                            tag['style'] = existing_style + '; ' + style
+                        else:
+                            tag['style'] = style
             
             # 特殊处理表格样式
             for table in soup.find_all('table'):
                 rows = table.find_all('tr')
                 for i, row in enumerate(rows):
                     if i % 2 == 1:  # 奇数行（除了表头）
-                        row['style'] = 'background-color: #f8fafc;'
+                        existing_style = row.get('style', '')
+                        if existing_style:
+                            row['style'] = existing_style + '; background-color: #f8fafc;'
+                        else:
+                            row['style'] = 'background-color: #f8fafc;'
             
             # 为h2标签添加左侧装饰线
             for h2 in soup.find_all('h2'):
                 current_style = h2.get('style', '')
-                h2['style'] = current_style + '; border-left: 4px solid #4299e1;'
+                if 'border-left' not in current_style:
+                    h2['style'] = current_style + '; border-left: 4px solid #4299e1;'
             
             # 优化链接样式
             for a in soup.find_all('a'):
@@ -134,9 +145,16 @@ class WeChatPublisher:
                 if p.find('strong') and len(p.get_text().strip()) < 50:
                     # 可能是小标题
                     strong = p.find('strong')
-                    if strong and strong.get_text() in ['我的推荐理由', '核心特性', '技术洞察', '适用场景', '个人感悟', '明日预告', '互动时间', '关注HelloDev', '多平台发布']:
+                    if strong and strong.get_text() in ['我的推荐理由', '核心特性', '技术洞察', '适用场景', '个人感悟', '明日预告', '互动时间', '关注HelloDev', '多平台发布', '今日统计']:
                         strong['style'] = 'color: #2d3748; font-weight: 600; font-size: 16px; letter-spacing: 0.3px;'
                         p['style'] = 'margin: 28px 0 16px 0; line-height: 1.6;'
+            
+            # 确保列表项正确显示
+            for ul in soup.find_all('ul'):
+                for li in ul.find_all('li'):
+                    # 确保列表项内容完整
+                    li_style = styles.get('li', '')
+                    li['style'] = li_style
             
             return str(soup)
             
@@ -187,12 +205,13 @@ class WeChatPublisher:
         # 转换为HTML
         html = markdown.markdown(
             markdown_content,
-            extensions=['codehilite', 'tables', 'toc', 'fenced_code'],
+            extensions=['codehilite', 'tables', 'toc', 'fenced_code', 'nl2br'],
             extension_configs={
                 'codehilite': {
                     'css_class': 'highlight',
                     'use_pygments': True
-                }
+                },
+                'nl2br': {}
             }
         )
         
