@@ -78,9 +78,9 @@ class WeChatPublisher:
             'h2': 'font-size: 19px; font-weight: 600; color: #2d3748; margin: 36px 0 18px 0; line-height: 1.4; letter-spacing: 0.3px; position: relative; padding-left: 16px;',
             'h3': 'font-size: 17px; font-weight: 600; color: #4a5568; margin: 32px 0 16px 0; line-height: 1.4; letter-spacing: 0.2px;',
             'p': 'margin: 18px 0; text-align: justify; line-height: 1.8; letter-spacing: 0.3px; word-spacing: 0.5px; color: #2c3e50; text-justify: inter-ideograph;',
-            'ul': 'margin: 20px 0; padding-left: 20px;',
-            'ol': 'margin: 20px 0; padding-left: 20px;',
-            'li': 'margin: 10px 0; line-height: 1.8; color: #2c3e50; letter-spacing: 0.3px;',
+            'ul': 'margin: 16px 0; padding-left: 0; list-style: none;',
+            'ol': 'margin: 16px 0; padding-left: 20px; list-style-type: decimal;',
+            'li': 'margin: 6px 0; line-height: 1.7; color: #2c3e50; letter-spacing: 0.3px; padding-left: 0; position: relative;',
             'blockquote': 'border-left: 3px solid #4299e1; margin: 28px 0; padding: 20px 24px; background-color: #f8fafc; color: #4a5568; border-radius: 6px; letter-spacing: 0.2px; line-height: 1.7; font-style: normal;',
             'code': 'background-color: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-family: "SF Mono", Consolas, "Liberation Mono", Menlo, monospace; color: #e53e3e; font-size: 13px; letter-spacing: 0px;',
             'pre': 'background-color: #f8fafc; padding: 24px; border-radius: 8px; overflow-x: auto; border: 1px solid #e2e8f0; margin: 28px 0; line-height: 1.6; font-size: 13px;',
@@ -149,12 +149,38 @@ class WeChatPublisher:
                         strong['style'] = 'color: #2d3748; font-weight: 600; font-size: 16px; letter-spacing: 0.3px;'
                         p['style'] = 'margin: 28px 0 16px 0; line-height: 1.6;'
             
-            # 确保列表项正确显示
+            # 优化列表显示效果
             for ul in soup.find_all('ul'):
+                # 应用无序列表样式
+                ul_style = styles.get('ul', '')
+                ul['style'] = ul_style
+                
                 for li in ul.find_all('li'):
-                    # 确保列表项内容完整
+                    # 应用列表项样式
                     li_style = styles.get('li', '')
                     li['style'] = li_style
+                    
+                    # 为无序列表项添加自定义项目符号
+                    text_content = li.get_text().strip()
+                    if text_content and not text_content.startswith(('•', '·', '-', '*')):
+                        # 如果内容不是以常见符号开始，添加项目符号
+                        if li.string:
+                            li.string.replace_with(f"• {text_content}")
+                        elif li.contents:
+                            # 处理包含其他标签的情况
+                            from bs4 import NavigableString
+                            first_text = None
+                            for content in li.contents:
+                                if isinstance(content, NavigableString) and content.strip():
+                                    first_text = content
+                                    break
+                            if first_text and not first_text.strip().startswith(('•', '·', '-', '*')):
+                                first_text.replace_with(f"• {first_text}")
+            
+            # 处理有序列表
+            for ol in soup.find_all('ol'):
+                ol_style = styles.get('ol', '')
+                ol['style'] = ol_style
             
             return str(soup)
             
