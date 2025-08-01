@@ -73,25 +73,25 @@ class WeChatPublisher:
     def get_inline_styles(self):
         """获取内联样式映射（微信公众号不支持style标签）"""
         return {
-            'body': 'font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei", Arial, sans-serif; font-size: 15px; line-height: 1.75; letter-spacing: 0.5px; color: #333333; word-spacing: 1px;',
-            'h1': 'font-size: 20px; font-weight: 600; color: #1a365d; border-bottom: 3px solid #4299e1; padding-bottom: 8px; margin: 32px 0 20px 0; line-height: 1.4; letter-spacing: 0.8px;',
-            'h2': 'font-size: 18px; font-weight: 600; color: #2d3748; border-left: 4px solid #4299e1; padding-left: 12px; margin: 28px 0 16px 0; line-height: 1.4; letter-spacing: 0.6px;',
-            'h3': 'font-size: 16px; font-weight: 600; color: #e53e3e; margin: 24px 0 12px 0; line-height: 1.4; letter-spacing: 0.4px;',
-            'p': 'margin: 20px 0; text-align: justify; line-height: 1.75; letter-spacing: 0.5px; word-spacing: 1px; color: #333333;',
-            'ul': 'margin: 20px 0; padding-left: 24px;',
-            'ol': 'margin: 20px 0; padding-left: 24px;',
-            'li': 'margin: 8px 0; line-height: 1.75; color: #333333; letter-spacing: 0.5px;',
-            'blockquote': 'border-left: 4px solid #38b2ac; margin: 24px 0; padding: 16px 20px; background-color: #f0fff4; font-style: italic; color: #2d3748; border-radius: 6px; letter-spacing: 0.3px; line-height: 1.75;',
-            'code': 'background-color: #f7fafc; padding: 3px 8px; border-radius: 4px; font-family: "Fira Code", Consolas, Monaco, monospace; color: #e53e3e; font-size: 14px; letter-spacing: 0.2px;',
-            'pre': 'background-color: #f7fafc; padding: 20px; border-radius: 8px; overflow-x: auto; border-left: 4px solid #4299e1; margin: 24px 0; line-height: 1.5;',
-            'pre code': 'background-color: transparent; padding: 0; color: #333333; font-size: 14px; letter-spacing: 0.2px;',
-            'strong': 'color: #1a365d; font-weight: 600; letter-spacing: 0.3px;',
-            'em': 'color: #38b2ac; font-style: italic; letter-spacing: 0.2px;',
-            'img': 'max-width: 100%; height: auto; border-radius: 8px; margin: 24px 0; box-shadow: 0 2px 12px rgba(0,0,0,0.12); display: block;',
-            'table': 'border-collapse: collapse; width: 100%; margin: 24px 0; font-size: 14px; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08);',
-            'th': 'border: 1px solid #e2e8f0; padding: 12px 16px; text-align: left; background-color: #4299e1; color: white; font-weight: 600;',
-            'td': 'border: 1px solid #e2e8f0; padding: 12px 16px; text-align: left; color: #333333; letter-spacing: 0.3px;',
-            'hr': 'border: none; height: 1px; background-color: #e2e8f0; margin: 32px 0; border-radius: 1px;'
+            'body': 'font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei", Arial, sans-serif; font-size: 15px; line-height: 1.8; letter-spacing: 0.3px; color: #2c3e50; word-spacing: 0.5px;',
+            'h1': 'font-size: 22px; font-weight: 700; color: #1a202c; margin: 40px 0 24px 0; line-height: 1.3; letter-spacing: 0.5px; padding-bottom: 12px; border-bottom: 2px solid #4299e1;',
+            'h2': 'font-size: 19px; font-weight: 600; color: #2d3748; margin: 36px 0 18px 0; line-height: 1.4; letter-spacing: 0.3px; position: relative; padding-left: 16px;',
+            'h3': 'font-size: 17px; font-weight: 600; color: #4a5568; margin: 32px 0 16px 0; line-height: 1.4; letter-spacing: 0.2px;',
+            'p': 'margin: 18px 0; text-align: justify; line-height: 1.8; letter-spacing: 0.3px; word-spacing: 0.5px; color: #2c3e50; text-justify: inter-ideograph;',
+            'ul': 'margin: 20px 0; padding-left: 20px;',
+            'ol': 'margin: 20px 0; padding-left: 20px;',
+            'li': 'margin: 10px 0; line-height: 1.8; color: #2c3e50; letter-spacing: 0.3px;',
+            'blockquote': 'border-left: 3px solid #4299e1; margin: 28px 0; padding: 20px 24px; background-color: #f8fafc; color: #4a5568; border-radius: 6px; letter-spacing: 0.2px; line-height: 1.7; font-style: normal;',
+            'code': 'background-color: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-family: "SF Mono", Consolas, "Liberation Mono", Menlo, monospace; color: #e53e3e; font-size: 13px; letter-spacing: 0px;',
+            'pre': 'background-color: #f8fafc; padding: 24px; border-radius: 8px; overflow-x: auto; border: 1px solid #e2e8f0; margin: 28px 0; line-height: 1.6; font-size: 13px;',
+            'pre code': 'background-color: transparent; padding: 0; color: #2d3748; font-size: 13px; letter-spacing: 0px;',
+            'strong': 'color: #1a202c; font-weight: 600; letter-spacing: 0.2px;',
+            'em': 'color: #4299e1; font-style: normal; font-weight: 500; letter-spacing: 0.1px;',
+            'img': 'max-width: 100%; height: auto; border-radius: 6px; margin: 28px 0; display: block; box-shadow: 0 4px 20px rgba(0,0,0,0.08);',
+            'table': 'border-collapse: collapse; width: 100%; margin: 28px 0; font-size: 14px; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);',
+            'th': 'border: none; padding: 16px 20px; text-align: left; background-color: #f8fafc; color: #2d3748; font-weight: 600; letter-spacing: 0.2px;',
+            'td': 'border: none; border-bottom: 1px solid #e2e8f0; padding: 16px 20px; text-align: left; color: #2c3e50; letter-spacing: 0.2px;',
+            'hr': 'border: none; height: 1px; background: linear-gradient(to right, transparent, #e2e8f0, transparent); margin: 40px 0;'
         }
     
     def apply_inline_styles(self, html):
@@ -113,12 +113,30 @@ class WeChatPublisher:
                     for tag in soup.find_all(tag_name):
                         tag['style'] = style
             
-            # 特殊处理表格奇偶行样式
+            # 特殊处理表格样式
             for table in soup.find_all('table'):
                 rows = table.find_all('tr')
                 for i, row in enumerate(rows):
-                    if i % 2 == 0 and i > 0:  # 偶数行（跳过表头）
-                        row['style'] = 'background-color: #f8f9fa;'
+                    if i % 2 == 1:  # 奇数行（除了表头）
+                        row['style'] = 'background-color: #f8fafc;'
+            
+            # 为h2标签添加左侧装饰线
+            for h2 in soup.find_all('h2'):
+                current_style = h2.get('style', '')
+                h2['style'] = current_style + '; border-left: 4px solid #4299e1;'
+            
+            # 优化链接样式
+            for a in soup.find_all('a'):
+                a['style'] = 'color: #4299e1; text-decoration: none; font-weight: 500;'
+            
+            # 处理特殊格式（加粗的标题行）
+            for p in soup.find_all('p'):
+                if p.find('strong') and len(p.get_text().strip()) < 50:
+                    # 可能是小标题
+                    strong = p.find('strong')
+                    if strong and strong.get_text() in ['我的推荐理由', '核心特性', '技术洞察', '适用场景', '个人感悟', '明日预告', '互动时间', '关注HelloDev', '多平台发布']:
+                        strong['style'] = 'color: #2d3748; font-weight: 600; font-size: 16px; letter-spacing: 0.3px;'
+                        p['style'] = 'margin: 28px 0 16px 0; line-height: 1.6;'
             
             return str(soup)
             
