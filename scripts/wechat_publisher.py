@@ -171,6 +171,16 @@ class WeChatPublisher:
             img_style = self.get_inline_styles()['img']
             return f'<img src="{img_path}" alt="{img_alt}" style="{img_style}">'
         
+        # 移除主标题（微信公众号标题单独设置）
+        lines = markdown_content.split('\n')
+        if lines and lines[0].startswith('# '):
+            # 移除第一行的主标题
+            lines = lines[1:]
+            # 移除标题后可能的空行
+            while lines and lines[0].strip() == '':
+                lines = lines[1:]
+            markdown_content = '\n'.join(lines)
+        
         # 替换图片
         markdown_content = re.sub(r'!\[(.*?)\]\((.*?)\)', replace_images, markdown_content)
         
