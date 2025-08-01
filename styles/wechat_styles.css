@@ -1,112 +1,138 @@
 /* HelloDev 微信公众号专用样式 */
 body { 
     font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei", Arial, sans-serif; 
-    font-size: 16px; 
-    line-height: 1.6; 
-    color: #333; 
+    font-size: 15px; 
+    line-height: 1.75; 
+    letter-spacing: 0.5px; 
+    color: #333333; 
     margin: 0; 
-    padding: 20px;
+    padding: 16px 12px;
+    max-width: 750px;
+    margin: 0 auto;
+    background-color: #ffffff;
 }
 
 /* HelloDev 品牌色彩 - 标题样式 */
 h1 { 
-    font-size: 1.8em; 
-    font-weight: bold; 
+    font-size: 20px; 
+    font-weight: 600; 
     color: #1a365d; 
     border-bottom: 3px solid #4299e1; 
-    padding-bottom: 0.3em; 
-    margin: 1.5em 0 1em 0;
+    padding-bottom: 8px; 
+    margin: 32px 0 20px 0;
+    line-height: 1.4;
+    letter-spacing: 0.8px;
 }
 
 h2 { 
-    font-size: 1.5em; 
-    font-weight: bold; 
+    font-size: 18px; 
+    font-weight: 600; 
     color: #2d3748; 
     border-left: 4px solid #4299e1; 
-    padding-left: 0.5em; 
-    margin: 1.3em 0 0.8em 0;
+    padding-left: 12px; 
+    margin: 28px 0 16px 0;
+    line-height: 1.4;
+    letter-spacing: 0.6px;
 }
 
 h3 { 
-    font-size: 1.3em; 
-    font-weight: bold; 
+    font-size: 16px; 
+    font-weight: 600; 
     color: #e53e3e; 
-    margin: 1.2em 0 0.6em 0;
+    margin: 24px 0 12px 0;
+    line-height: 1.4;
+    letter-spacing: 0.4px;
 }
 
 /* 段落样式 */
 p { 
-    margin: 1em 0; 
+    margin: 20px 0; 
     text-align: justify; 
-    line-height: 1.8;
+    line-height: 1.75;
+    letter-spacing: 0.5px;
+    word-spacing: 1px;
+    color: #333333;
+    text-indent: 0;
 }
 
 /* 代码样式 */
 code { 
     background-color: #f7fafc; 
-    padding: 2px 6px; 
+    padding: 3px 8px; 
     border-radius: 4px; 
     font-family: 'Fira Code', Consolas, Monaco, monospace; 
     color: #e53e3e; 
-    font-size: 0.9em;
+    font-size: 14px;
+    letter-spacing: 0.2px;
 }
 
 pre { 
     background-color: #f7fafc; 
-    padding: 1.2em; 
+    padding: 20px; 
     border-radius: 8px; 
     overflow-x: auto; 
     border-left: 4px solid #4299e1; 
-    margin: 1.5em 0;
-    line-height: 1.4;
+    margin: 24px 0;
+    line-height: 1.5;
 }
 
 pre code { 
     background-color: transparent; 
     padding: 0; 
-    color: #333; 
-    font-size: 0.9em;
+    color: #333333; 
+    font-size: 14px;
+    letter-spacing: 0.2px;
 }
 
 /* HelloDev 特色引用样式 */
 blockquote { 
     border-left: 4px solid #38b2ac; 
-    margin: 1.5em 0; 
-    padding: 0.5em 1.2em; 
+    margin: 24px 0; 
+    padding: 16px 20px; 
     background-color: #f0fff4; 
     font-style: italic; 
     color: #2d3748;
+    border-radius: 6px;
+    letter-spacing: 0.3px;
+    line-height: 1.75;
 }
 
 /* 列表样式 */
 ul, ol { 
-    margin: 1em 0; 
-    padding-left: 2em; 
+    margin: 20px 0; 
+    padding-left: 24px; 
 }
 
 li { 
-    margin: 0.5em 0; 
-    line-height: 1.6;
+    margin: 8px 0; 
+    line-height: 1.75;
+    color: #333333;
+    letter-spacing: 0.5px;
 }
 
 /* 开发者友好的表格样式 */
 table { 
     border-collapse: collapse; 
     width: 100%; 
-    margin: 1.5em 0; 
-    font-size: 0.9em;
+    margin: 24px 0; 
+    font-size: 14px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 th, td { 
-    border: 1px solid #ddd; 
-    padding: 10px 12px; 
+    border: 1px solid #e2e8f0; 
+    padding: 12px 16px; 
     text-align: left; 
+    color: #333333;
+    letter-spacing: 0.3px;
 }
 
 th { 
     background-color: #4299e1; 
     color: white; 
-    font-weight: bold; 
+    font-weight: 600; 
 }
 
 tr:nth-child(even) { 
@@ -118,8 +144,9 @@ img {
     max-width: 100%; 
     height: auto; 
     border-radius: 8px; 
-    margin: 1em 0; 
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin: 24px 0; 
+    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+    display: block;
 }
 
 /* 链接样式 */
@@ -136,19 +163,22 @@ a:hover {
 hr { 
     border: none; 
     height: 1px; 
-    background-color: #ddd; 
-    margin: 2em 0; 
+    background-color: #e2e8f0; 
+    margin: 32px 0; 
+    border-radius: 1px;
 }
 
 /* 强调样式 */
 strong, b {
     color: #1a365d;
     font-weight: 600;
+    letter-spacing: 0.3px;
 }
 
 em, i {
     color: #38b2ac;
     font-style: italic;
+    letter-spacing: 0.2px;
 }
 
 /* 技术栈标签样式 */
@@ -185,4 +215,143 @@ em, i {
     padding: 1em;
     margin: 1.5em 0;
     border-radius: 4px;
+}
+
+/* 卡片式布局 */
+.card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 24px 0;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    border: 1px solid #e2e8f0;
+}
+
+.card-header {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a365d;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.card-content {
+    color: #333333;
+    line-height: 1.75;
+    letter-spacing: 0.5px;
+}
+
+/* 精美引用框 */
+.quote-box {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin: 24px 0;
+    position: relative;
+    box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3);
+}
+
+.quote-box::before {
+    content: '"';
+    font-size: 48px;
+    color: rgba(255,255,255,0.3);
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    font-family: serif;
+}
+
+.quote-box p {
+    margin: 0;
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1.6;
+    color: white;
+}
+
+/* 高亮文本 */
+.highlight {
+    background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #2d3748;
+    font-weight: 500;
+}
+
+/* 按钮样式 */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    margin: 8px 4px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(102, 126, 234, 0.4);
+    color: white;
+}
+
+/* 标签样式 */
+.tag {
+    display: inline-block;
+    background-color: #f7fafc;
+    color: #4299e1;
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 13px;
+    margin: 2px 4px;
+    border: 1px solid #4299e1;
+    font-weight: 500;
+}
+
+/* 时间轴样式 */
+.timeline {
+    position: relative;
+    padding: 20px 0;
+    margin: 24px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, #4299e1, #38b2ac);
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 60px;
+    margin-bottom: 24px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 8px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #4299e1;
+    border: 3px solid #ffffff;
+    box-shadow: 0 0 0 2px #e2e8f0;
+}
+
+.timeline-content {
+    background-color: #f8f9fa;
+    padding: 16px;
+    border-radius: 8px;
+    border-left: 3px solid #4299e1;
 }
