@@ -1,0 +1,19 @@
+2025-08-13|fastapi / full-stack-fastapi-template|react,python,letsencrypt|https://github.com/fastapi/full-stack-fastapi-template
+2025-08-13|nomic-ai / gpt4all|ai-chat,llm-inference|https://github.com/nomic-ai/gpt4all
+2025-08-13|unslothai / notebooks|unsloth,LLM,fine-tuning|https://github.com/unslothai/notebooks
+2025-08-13|conductor-oss / conductor|javascript,java,distributed-systems|https://github.com/conductor-oss/conductor
+2025-08-13|microsoft / poml|prompt,markup-language,vscode-extension|https://github.com/microsoft/poml
+2025-08-13|umami-software / umami|charts,statistics,analytics|https://github.com/umami-software/umami
+2025-08-13|donnemartin / system-design-primer|python,design,development|https://github.com/donnemartin/system-design-primer
+2025-08-13|apple / embedding-atlas|visualization,embedding,WebGPU|https://github.com/apple/embedding-atlas
+2025-08-13|Gemini|LLMs,AI Chatbots,Predictive AI|https://www.producthunt.com/products/gemini-6
+2025-08-13|OpenAI|LLMs,AI Chatbots,AI Infrastructure Tools|https://www.producthunt.com/products/openai
+2025-08-13|Leads Ward|Marketing,SaaS,Artificial Intelligence|https://www.producthunt.com/products/leads-ward
+2025-08-13|Transync AI|Productivity,Meetings,Artificial Intelligence|https://www.producthunt.com/products/transync-ai
+2025-08-13|Coverage Cat|Fintech,Cats,Artificial Intelligence|https://www.producthunt.com/products/coverage-cat
+2025-08-13|Earlytap|landing-page-builders,survey-and-form-builders,ai-chatbots|https://www.producthunt.com/products/earlytap
+2025-08-13|libsdl-org / SDL|sdl,sdl2,sdl3|https://github.com/libsdl-org/SDL
+2025-08-13|FiloSottile / mkcert|windows,macos,linux|https://github.com/FiloSottile/mkcert
+2025-08-13|ubicloud / ubicloud|ruby,linux,kubernetes|https://github.com/ubicloud/ubicloud
+2025-08-13|Hitting $100M ARR in eight months with an AI software builder|AI,SaaS,Startup|https://www.indiehackers.com/post/ONMaxjB3rix2PnBCnrDr
+2025-08-13|trailofbits/buttercup: A Cyber Reasoning System for AI Cyber Challenge|cybersecurity,AI,vulnerability-detection|https://github.com/trailofbits/buttercup
