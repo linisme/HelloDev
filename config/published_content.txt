@@ -112,3 +112,22 @@
 2025-08-14|idosal / git-mcp|git,ai,mcp|https://github.com/idosal/git-mcp
 2025-08-14|Hitting $100M ARR in eight months with an AI software builder|artificial-intelligence,saas,startup|https://www.indiehackers.com/post/ONMaxjB3rix2PnBCnrDr
 2025-08-14|openai / codex|AI,CLI,Coding|https://github.com/openai/codex
+2025-08-15|pathwaycom / pathway|python,rust,streaming|https://github.com/pathwaycom/pathway
+2025-08-15|bytedance / UI-TARS-desktop|agent,mcp,vision|https://github.com/bytedance/UI-TARS-desktop
+2025-08-15|redis / go-redis|go,redis,golang|https://github.com/redis/go-redis
+2025-08-15|colmap/colmap: COLMAP - Structure-from-Motion and Multi-View Stereo|computer-vision,geometry,structure-from-motion|https://github.com/colmap/colmap
+2025-08-15|hashicorp / terraform|cloud,graph,terraform|https://github.com/hashicorp/terraform
+2025-08-15|angular/components: Component infrastructure and Material Design components for Angular|angular,material,material-design|https://github.com/angular/components
+2025-08-15|ostris / ai-toolkit|AI,Machine Learning,Diffusion Models|https://github.com/ostris/ai-toolkit
+2025-08-15|external-secrets / external-secrets|kubernetes,secrets-management,operator|https://github.com/external-secrets/external-secrets
+2025-08-15|Snowglobe|Artificial Intelligence,Security|https://www.producthunt.com/products/snowglobe
+2025-08-15|Anything|Artificial Intelligence,No-Code,Vibe coding|https://www.producthunt.com/products/anything-2
+2025-08-15|CoSupport AI|Customer Communication,SaaS,Artificial Intelligence|https://cosupport.ai/?ref=producthunt
+2025-08-15|Comet by Perplexity|Mac,Artificial Intelligence,Search|https://www.producthunt.com/products/perplexity-ai
+2025-08-15|LangRead|eBook Reader,Education,Languages|https://www.producthunt.com/products/langread
+2025-08-15|Macaron AI|Artificial Intelligence,Bots,Lifestyle|https://www.producthunt.com/products/macaron-ai
+2025-08-15|DeepReel|Marketing,Video|https://www.producthunt.com/products/deepreel
+2025-08-15|Hitting $12k/mo with a boilerplate|SaaS,Bootstrapping,Indie Hacking|https://www.indiehackers.com/post/tech/hitting-12k-mo-with-a-boilerplate-j2n9ECQvdJBw9Gvf4TKA
+2025-08-15|Show HN: Yet another memory system for LLMs|compression,memory,localstorage|https://github.com/trvon/yams
+2025-08-15|From weekend experiment to $20k/mo business|Indie Hackers,Startup,SaaS|https://www.indiehackers.com/post/tech/from-weekend-experiment-to-20k-mo-business-aP4YP2DouOUuicCtcnCB
+2025-08-15|Dub Partners|Marketing,SaaS,Affiliate marketing|https://www.producthunt.com/products/dub
