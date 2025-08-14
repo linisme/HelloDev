@@ -191,92 +191,6 @@ class WeChatPublisher:
             print(f"⚠️  应用内联样式失败: {e}")
             return html
     
-    def process_links_for_wechat(self, markdown_content):
-        """处理Markdown中的标题链接，适配微信公众号格式"""
-        import re
-        
-        lines = markdown_content.split('\n')
-        processed_lines = []
-        i = 0
-        
-        while i < len(lines):
-            line = lines[i]
-            
-            # 检查是否是标题链接行（### 前置描述：[项目名称](链接) 或 ### [项目名称](链接)）
-            title_match = re.match(r'^(###\s+)(.*?：)?\[([^\]]+)\]\(([^)]+)\)(.*)$', line)
-            
-            if title_match:
-                prefix = title_match.group(1)        # ### 
-                prefix_desc = title_match.group(2)   # 前置描述：（可能为None）
-                project_name = title_match.group(3)  # 项目名称
-                url = title_match.group(4)           # URL
-                suffix = title_match.group(5)        # 后缀（如⭐等）
-                
-                # 构建新的标题格式：保留前置描述和项目名称，移除链接
-                if prefix_desc:
-                    # 有前置描述的情况：### 前置描述：项目名称
-                    new_title = f"{prefix}{prefix_desc}{project_name}{suffix}"
-                else:
-                    # 没有前置描述的情况：### 项目名称
-                    new_title = f"{prefix}{project_name}{suffix}"
-                processed_lines.append(new_title)
-                
-                # 寻找这个内容块的结束位置（下一个### 或 ## 或文件结尾）
-                j = i + 1
-                content_block = []
-                
-                while j < len(lines):
-                    if lines[j].startswith('###') or lines[j].startswith('## '):
-                        break
-                    content_block.append(lines[j])
-                    j += 1
-                
-                # 处理内容块，在分割线前插入链接信息
-                content_lines = []
-                for content_line in content_block:
-                    content_lines.append(content_line)
-                
-                # 寻找最后的分割线位置
-                separator_index = -1
-                for idx in range(len(content_lines) - 1, -1, -1):
-                    if content_lines[idx].strip() == '---':
-                        separator_index = idx
-                        break
-                
-                if separator_index >= 0:
-                    # 在分割线前插入链接信息
-                    # 移除分割线前的空行
-                    while separator_index > 0 and content_lines[separator_index - 1].strip() == '':
-                        separator_index -= 1
-                    
-                    # 插入链接信息
-                    content_lines.insert(separator_index, '')  # 空行
-                    content_lines.insert(separator_index + 1, '> 🔗 **链接**')
-                    content_lines.insert(separator_index + 2, '>')
-                    content_lines.insert(separator_index + 3, f'> {url}')
-                    content_lines.insert(separator_index + 4, '')  # 空行
-                else:
-                    # 如果没有分割线，在末尾添加链接信息
-                    # 移除末尾空行
-                    while content_lines and content_lines[-1].strip() == '':
-                        content_lines.pop()
-                    
-                    content_lines.append('')  # 空行分隔
-                    content_lines.append('> 🔗 **链接**')
-                    content_lines.append('>')
-                    content_lines.append(f'> {url}')
-                    content_lines.append('')  # 空行分隔
-                
-                # 添加处理后的内容块
-                processed_lines.extend(content_lines)
-                
-                i = j - 1  # 跳到下一个内容块
-            else:
-                processed_lines.append(line)
-            
-            i += 1
-        
-        return '\n'.join(processed_lines)
     
     def process_markdown_content(self, markdown_content, article_dir):
         """处理Markdown内容，上传图片并转换HTML"""
@@ -312,8 +226,6 @@ class WeChatPublisher:
                 lines = lines[1:]
             markdown_content = '\n'.join(lines)
         
-        # 处理链接 - 在项目介绍末尾添加链接信息
-        markdown_content = self.process_links_for_wechat(markdown_content)
         
         # 替换图片
         markdown_content = re.sub(r'!\[(.*?)\]\((.*?)\)', replace_images, markdown_content)
