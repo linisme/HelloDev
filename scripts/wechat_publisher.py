@@ -191,6 +191,62 @@ class WeChatPublisher:
             print(f"⚠️  应用内联样式失败: {e}")
             return html
     
+    def process_links_for_wechat(self, markdown_content):
+        """处理Markdown中的标题链接，适配微信公众号格式"""
+        import re
+        
+        lines = markdown_content.split('\n')
+        processed_lines = []
+        i = 0
+        
+        while i < len(lines):
+            line = lines[i]
+            
+            # 检查是否是标题链接行（### [标题](链接)）
+            title_match = re.match(r'^(###\s+)\[([^\]]+)\]\(([^)]+)\)(.*)$', line)
+            
+            if title_match:
+                prefix = title_match.group(1)  # ### 
+                title_text = title_match.group(2)  # 标题文本
+                url = title_match.group(3)   # URL
+                suffix = title_match.group(4)        # 后缀（如⭐等）
+                
+                # 构建新的标题格式：移除链接，保留标题文本
+                new_title = f"{prefix}{title_text}{suffix}"
+                processed_lines.append(new_title)
+                
+                # 寻找这个内容块的结束位置（下一个### 或 ## 或文件结尾）
+                j = i + 1
+                content_block = []
+                
+                while j < len(lines):
+                    if lines[j].startswith('###') or lines[j].startswith('## '):
+                        break
+                    content_block.append(lines[j])
+                    j += 1
+                
+                # 添加内容块
+                processed_lines.extend(content_block)
+                
+                # 移除末尾可能的空行
+                while processed_lines and processed_lines[-1].strip() == '':
+                    processed_lines.pop()
+                
+                # 在内容末尾添加链接信息块（简洁美观的样式）
+                processed_lines.append('')  # 空行分隔
+                processed_lines.append('> 🔗 **链接**')
+                processed_lines.append('>')
+                processed_lines.append(f'> {url}')
+                processed_lines.append('')  # 空行分隔
+                
+                i = j - 1  # 跳到下一个内容块
+            else:
+                processed_lines.append(line)
+            
+            i += 1
+        
+        return '\n'.join(processed_lines)
+    
     def process_markdown_content(self, markdown_content, article_dir):
         """处理Markdown内容，上传图片并转换HTML"""
         
@@ -224,6 +280,9 @@ class WeChatPublisher:
             while lines and lines[0].strip() == '':
                 lines = lines[1:]
             markdown_content = '\n'.join(lines)
+        
+        # 处理链接 - 在项目介绍末尾添加链接信息
+        markdown_content = self.process_links_for_wechat(markdown_content)
         
         # 替换图片
         markdown_content = re.sub(r'!\[(.*?)\]\((.*?)\)', replace_images, markdown_content)
