@@ -36,3 +36,22 @@
 2025-08-14|idosal / git-mcp|git,ai,mcp|https://github.com/idosal/git-mcp
 2025-08-14|Hitting $100M ARR in eight months with an AI software builder|artificial-intelligence,saas,startup|https://www.indiehackers.com/post/ONMaxjB3rix2PnBCnrDr
 2025-08-14|openai / codex|AI,CLI,Coding|https://github.com/openai/codex
+2025-08-14|nomic-ai / gpt4all|ai-chat,llm-inference|https://github.com/nomic-ai/gpt4all
+2025-08-14|microsoft / generative-ai-for-beginners|ai,azure,transformers|https://github.com/microsoft/generative-ai-for-beginners
+2025-08-14|fastapi / full-stack-fastapi-template|react,python,letsencrypt|https://github.com/fastapi/full-stack-fastapi-template
+2025-08-14|mendableai / firecrawl|markdown,crawler,data|https://github.com/mendableai/firecrawl
+2025-08-14|umami-software / umami|charts,statistics,analytics|https://github.com/umami-software/umami
+2025-08-14|tadata-org / fastapi_mcp|ai,authentication,mcp|https://github.com/tadata-org/fastapi_mcp
+2025-08-14|trailofbits/buttercup: A Cyber Reasoning System for Automated Vulnerability Detection and Patching|cybersecurity,AI,vulnerability-detection|https://github.com/trailofbits/buttercup
+2025-08-14|patchy631 / ai-engineering-hub|machine-learning,ai,mcp|https://github.com/patchy631/ai-engineering-hub
+2025-08-14|nFactorial AI|Education,Artificial Intelligence,Online Learning|https://www.producthunt.com/products/nfactorial-ai-6
+2025-08-14|SuperCraft|Design Tools,Productivity,Artificial Intelligence|https://www.producthunt.com/products/supercraft
+2025-08-14|Embedding Atlas|Open Source,GitHub,Apple|https://www.producthunt.com/products/embedding-atlas
+2025-08-14|Inbox Hero|Email,Productivity,Artificial Intelligence|https://www.producthunt.com/products/inbox-hero
+2025-08-14|Saleslift|Sales,SaaS,Artificial Intelligence|https://www.producthunt.com/products/saleslift
+2025-08-14|Hyprnote|Productivity,Notes,Meetings|https://www.producthunt.com/products/hyprnote
+2025-08-14|menloresearch / jan|self-hosted,gpt,tauri|https://github.com/menloresearch/jan
+2025-08-14|midday-ai / midday|finance,typescript,nextjs|https://github.com/midday-ai/midday
+2025-08-14|idosal / git-mcp|git,ai,mcp|https://github.com/idosal/git-mcp
+2025-08-14|Hitting $100M ARR in eight months with an AI software builder|artificial-intelligence,saas,startup|https://www.indiehackers.com/post/ONMaxjB3rix2PnBCnrDr
+2025-08-14|openai / codex|AI,CLI,Coding|https://github.com/openai/codex

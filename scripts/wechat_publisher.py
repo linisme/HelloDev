@@ -225,19 +225,44 @@ class WeChatPublisher:
                     content_block.append(lines[j])
                     j += 1
                 
-                # 添加内容块
-                processed_lines.extend(content_block)
+                # 处理内容块，在分割线前插入链接信息
+                content_lines = []
+                for content_line in content_block:
+                    content_lines.append(content_line)
                 
-                # 移除末尾可能的空行
-                while processed_lines and processed_lines[-1].strip() == '':
-                    processed_lines.pop()
+                # 寻找最后的分割线位置
+                separator_index = -1
+                for idx in range(len(content_lines) - 1, -1, -1):
+                    if content_lines[idx].strip() == '---':
+                        separator_index = idx
+                        break
                 
-                # 在内容末尾添加链接信息块（简洁美观的样式）
-                processed_lines.append('')  # 空行分隔
-                processed_lines.append('> 🔗 **链接**')
-                processed_lines.append('>')
-                processed_lines.append(f'> {url}')
-                processed_lines.append('')  # 空行分隔
+                if separator_index >= 0:
+                    # 在分割线前插入链接信息
+                    # 移除分割线前的空行
+                    while separator_index > 0 and content_lines[separator_index - 1].strip() == '':
+                        separator_index -= 1
+                    
+                    # 插入链接信息
+                    content_lines.insert(separator_index, '')  # 空行
+                    content_lines.insert(separator_index + 1, '> 🔗 **链接**')
+                    content_lines.insert(separator_index + 2, '>')
+                    content_lines.insert(separator_index + 3, f'> {url}')
+                    content_lines.insert(separator_index + 4, '')  # 空行
+                else:
+                    # 如果没有分割线，在末尾添加链接信息
+                    # 移除末尾空行
+                    while content_lines and content_lines[-1].strip() == '':
+                        content_lines.pop()
+                    
+                    content_lines.append('')  # 空行分隔
+                    content_lines.append('> 🔗 **链接**')
+                    content_lines.append('>')
+                    content_lines.append(f'> {url}')
+                    content_lines.append('')  # 空行分隔
+                
+                # 添加处理后的内容块
+                processed_lines.extend(content_lines)
                 
                 i = j - 1  # 跳到下一个内容块
             else:
