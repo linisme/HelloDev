@@ -150,13 +150,13 @@
     }
   },
   "2025/08-14/index.md": {
-    "title": "HelloDev.io 开发者日报 - 第 7 期 | 2025 年 08 月 14 日",
+    "title": "HelloDev.io 开发者日报 - 第 8 期 | 2025 年 08 月 14 日",
     "content_hash": "",
-    "last_updated": "2025-08-14T15:04:33.121903",
+    "last_updated": "2025-08-14T15:46:48.110240",
     "platforms": {
       "wechat": {
         "published": true,
-        "published_time": "2025-08-14T15:04:33.121903",
+        "published_time": "2025-08-14T15:46:48.110240",
         "status": "success",
         "message": "成功发布 1/1 篇文章"
       },
