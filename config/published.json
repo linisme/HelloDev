@@ -148,5 +148,30 @@
         "message": "未配置认证信息，跳过发布"
       }
     }
+  },
+  "2025/08-14/index.md": {
+    "title": "HelloDev.io 开发者日报 - 第 7 期 | 2025 年 08 月 14 日",
+    "content_hash": "",
+    "last_updated": "2025-08-14T15:04:33.121903",
+    "platforms": {
+      "wechat": {
+        "published": true,
+        "published_time": "2025-08-14T15:04:33.121903",
+        "status": "success",
+        "message": "成功发布 1/1 篇文章"
+      },
+      "juejin": {
+        "published": false,
+        "published_time": null,
+        "status": "skipped",
+        "message": "未配置认证信息，跳过发布"
+      },
+      "zhihu": {
+        "published": false,
+        "published_time": null,
+        "status": "skipped",
+        "message": "未配置认证信息，跳过发布"
+      }
+    }
   }
 }
