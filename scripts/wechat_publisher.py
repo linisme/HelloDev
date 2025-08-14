@@ -202,17 +202,23 @@ class WeChatPublisher:
         while i < len(lines):
             line = lines[i]
             
-            # 检查是否是标题链接行（### [标题](链接)）
-            title_match = re.match(r'^(###\s+)\[([^\]]+)\]\(([^)]+)\)(.*)$', line)
+            # 检查是否是标题链接行（### 前置描述：[项目名称](链接) 或 ### [项目名称](链接)）
+            title_match = re.match(r'^(###\s+)(.*?：)?\[([^\]]+)\]\(([^)]+)\)(.*)$', line)
             
             if title_match:
-                prefix = title_match.group(1)  # ### 
-                title_text = title_match.group(2)  # 标题文本
-                url = title_match.group(3)   # URL
-                suffix = title_match.group(4)        # 后缀（如⭐等）
+                prefix = title_match.group(1)        # ### 
+                prefix_desc = title_match.group(2)   # 前置描述：（可能为None）
+                project_name = title_match.group(3)  # 项目名称
+                url = title_match.group(4)           # URL
+                suffix = title_match.group(5)        # 后缀（如⭐等）
                 
-                # 构建新的标题格式：移除链接，保留标题文本
-                new_title = f"{prefix}{title_text}{suffix}"
+                # 构建新的标题格式：保留前置描述和项目名称，移除链接
+                if prefix_desc:
+                    # 有前置描述的情况：### 前置描述：项目名称
+                    new_title = f"{prefix}{prefix_desc}{project_name}{suffix}"
+                else:
+                    # 没有前置描述的情况：### 项目名称
+                    new_title = f"{prefix}{project_name}{suffix}"
                 processed_lines.append(new_title)
                 
                 # 寻找这个内容块的结束位置（下一个### 或 ## 或文件结尾）
