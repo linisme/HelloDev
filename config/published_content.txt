@@ -1,133 +1,19 @@
-2025-08-13|fastapi / full-stack-fastapi-template|react,python,letsencrypt|https://github.com/fastapi/full-stack-fastapi-template
-2025-08-13|nomic-ai / gpt4all|ai-chat,llm-inference|https://github.com/nomic-ai/gpt4all
-2025-08-13|unslothai / notebooks|unsloth,LLM,fine-tuning|https://github.com/unslothai/notebooks
-2025-08-13|conductor-oss / conductor|javascript,java,distributed-systems|https://github.com/conductor-oss/conductor
-2025-08-13|microsoft / poml|prompt,markup-language,vscode-extension|https://github.com/microsoft/poml
-2025-08-13|umami-software / umami|charts,statistics,analytics|https://github.com/umami-software/umami
-2025-08-13|donnemartin / system-design-primer|python,design,development|https://github.com/donnemartin/system-design-primer
-2025-08-13|apple / embedding-atlas|visualization,embedding,WebGPU|https://github.com/apple/embedding-atlas
-2025-08-13|Gemini|LLMs,AI Chatbots,Predictive AI|https://www.producthunt.com/products/gemini-6
-2025-08-13|OpenAI|LLMs,AI Chatbots,AI Infrastructure Tools|https://www.producthunt.com/products/openai
-2025-08-13|Leads Ward|Marketing,SaaS,Artificial Intelligence|https://www.producthunt.com/products/leads-ward
-2025-08-13|Transync AI|Productivity,Meetings,Artificial Intelligence|https://www.producthunt.com/products/transync-ai
-2025-08-13|Coverage Cat|Fintech,Cats,Artificial Intelligence|https://www.producthunt.com/products/coverage-cat
-2025-08-13|Earlytap|landing-page-builders,survey-and-form-builders,ai-chatbots|https://www.producthunt.com/products/earlytap
-2025-08-13|libsdl-org / SDL|sdl,sdl2,sdl3|https://github.com/libsdl-org/SDL
-2025-08-13|FiloSottile / mkcert|windows,macos,linux|https://github.com/FiloSottile/mkcert
-2025-08-13|ubicloud / ubicloud|ruby,linux,kubernetes|https://github.com/ubicloud/ubicloud
-2025-08-13|Hitting $100M ARR in eight months with an AI software builder|AI,SaaS,Startup|https://www.indiehackers.com/post/ONMaxjB3rix2PnBCnrDr
-2025-08-13|trailofbits/buttercup: A Cyber Reasoning System for AI Cyber Challenge|cybersecurity,AI,vulnerability-detection|https://github.com/trailofbits/buttercup
-2025-08-14|nomic-ai / gpt4all|ai-chat,llm-inference|https://github.com/nomic-ai/gpt4all
-2025-08-14|microsoft / generative-ai-for-beginners|ai,azure,transformers|https://github.com/microsoft/generative-ai-for-beginners
-2025-08-14|fastapi / full-stack-fastapi-template|react,python,letsencrypt|https://github.com/fastapi/full-stack-fastapi-template
-2025-08-14|mendableai / firecrawl|markdown,crawler,data|https://github.com/mendableai/firecrawl
-2025-08-14|umami-software / umami|charts,statistics,analytics|https://github.com/umami-software/umami
-2025-08-14|tadata-org / fastapi_mcp|ai,authentication,mcp|https://github.com/tadata-org/fastapi_mcp
-2025-08-14|trailofbits/buttercup: A Cyber Reasoning System for Automated Vulnerability Detection and Patching|cybersecurity,AI,vulnerability-detection|https://github.com/trailofbits/buttercup
-2025-08-14|patchy631 / ai-engineering-hub|machine-learning,ai,mcp|https://github.com/patchy631/ai-engineering-hub
-2025-08-14|nFactorial AI|Education,Artificial Intelligence,Online Learning|https://www.producthunt.com/products/nfactorial-ai-6
-2025-08-14|SuperCraft|Design Tools,Productivity,Artificial Intelligence|https://www.producthunt.com/products/supercraft
-2025-08-14|Embedding Atlas|Open Source,GitHub,Apple|https://www.producthunt.com/products/embedding-atlas
-2025-08-14|Inbox Hero|Email,Productivity,Artificial Intelligence|https://www.producthunt.com/products/inbox-hero
-2025-08-14|Saleslift|Sales,SaaS,Artificial Intelligence|https://www.producthunt.com/products/saleslift
-2025-08-14|Hyprnote|Productivity,Notes,Meetings|https://www.producthunt.com/products/hyprnote
-2025-08-14|menloresearch / jan|self-hosted,gpt,tauri|https://github.com/menloresearch/jan
-2025-08-14|midday-ai / midday|finance,typescript,nextjs|https://github.com/midday-ai/midday
-2025-08-14|idosal / git-mcp|git,ai,mcp|https://github.com/idosal/git-mcp
-2025-08-14|Hitting $100M ARR in eight months with an AI software builder|artificial-intelligence,saas,startup|https://www.indiehackers.com/post/ONMaxjB3rix2PnBCnrDr
-2025-08-14|openai / codex|AI,CLI,Coding|https://github.com/openai/codex
-2025-08-14|nomic-ai / gpt4all|ai-chat,llm-inference|https://github.com/nomic-ai/gpt4all
-2025-08-14|microsoft / generative-ai-for-beginners|ai,azure,transformers|https://github.com/microsoft/generative-ai-for-beginners
-2025-08-14|fastapi / full-stack-fastapi-template|react,python,letsencrypt|https://github.com/fastapi/full-stack-fastapi-template
-2025-08-14|mendableai / firecrawl|markdown,crawler,data|https://github.com/mendableai/firecrawl
-2025-08-14|umami-software / umami|charts,statistics,analytics|https://github.com/umami-software/umami
-2025-08-14|tadata-org / fastapi_mcp|ai,authentication,mcp|https://github.com/tadata-org/fastapi_mcp
-2025-08-14|trailofbits/buttercup: A Cyber Reasoning System for Automated Vulnerability Detection and Patching|cybersecurity,AI,vulnerability-detection|https://github.com/trailofbits/buttercup
-2025-08-14|patchy631 / ai-engineering-hub|machine-learning,ai,mcp|https://github.com/patchy631/ai-engineering-hub
-2025-08-14|nFactorial AI|Education,Artificial Intelligence,Online Learning|https://www.producthunt.com/products/nfactorial-ai-6
-2025-08-14|SuperCraft|Design Tools,Productivity,Artificial Intelligence|https://www.producthunt.com/products/supercraft
-2025-08-14|Embedding Atlas|Open Source,GitHub,Apple|https://www.producthunt.com/products/embedding-atlas
-2025-08-14|Inbox Hero|Email,Productivity,Artificial Intelligence|https://www.producthunt.com/products/inbox-hero
-2025-08-14|Saleslift|Sales,SaaS,Artificial Intelligence|https://www.producthunt.com/products/saleslift
-2025-08-14|Hyprnote|Productivity,Notes,Meetings|https://www.producthunt.com/products/hyprnote
-2025-08-14|menloresearch / jan|self-hosted,gpt,tauri|https://github.com/menloresearch/jan
-2025-08-14|midday-ai / midday|finance,typescript,nextjs|https://github.com/midday-ai/midday
-2025-08-14|idosal / git-mcp|git,ai,mcp|https://github.com/idosal/git-mcp
-2025-08-14|Hitting $100M ARR in eight months with an AI software builder|artificial-intelligence,saas,startup|https://www.indiehackers.com/post/ONMaxjB3rix2PnBCnrDr
-2025-08-14|openai / codex|AI,CLI,Coding|https://github.com/openai/codex
-2025-08-14|nomic-ai / gpt4all|ai-chat,llm-inference|https://github.com/nomic-ai/gpt4all
-2025-08-14|microsoft / generative-ai-for-beginners|ai,azure,transformers|https://github.com/microsoft/generative-ai-for-beginners
-2025-08-14|fastapi / full-stack-fastapi-template|react,python,letsencrypt|https://github.com/fastapi/full-stack-fastapi-template
-2025-08-14|mendableai / firecrawl|markdown,crawler,data|https://github.com/mendableai/firecrawl
-2025-08-14|umami-software / umami|charts,statistics,analytics|https://github.com/umami-software/umami
-2025-08-14|tadata-org / fastapi_mcp|ai,authentication,mcp|https://github.com/tadata-org/fastapi_mcp
-2025-08-14|trailofbits/buttercup: A Cyber Reasoning System for Automated Vulnerability Detection and Patching|cybersecurity,AI,vulnerability-detection|https://github.com/trailofbits/buttercup
-2025-08-14|patchy631 / ai-engineering-hub|machine-learning,ai,mcp|https://github.com/patchy631/ai-engineering-hub
-2025-08-14|nFactorial AI|Education,Artificial Intelligence,Online Learning|https://www.producthunt.com/products/nfactorial-ai-6
-2025-08-14|SuperCraft|Design Tools,Productivity,Artificial Intelligence|https://www.producthunt.com/products/supercraft
-2025-08-14|Embedding Atlas|Open Source,GitHub,Apple|https://www.producthunt.com/products/embedding-atlas
-2025-08-14|Inbox Hero|Email,Productivity,Artificial Intelligence|https://www.producthunt.com/products/inbox-hero
-2025-08-14|Saleslift|Sales,SaaS,Artificial Intelligence|https://www.producthunt.com/products/saleslift
-2025-08-14|Hyprnote|Productivity,Notes,Meetings|https://www.producthunt.com/products/hyprnote
-2025-08-14|menloresearch / jan|self-hosted,gpt,tauri|https://github.com/menloresearch/jan
-2025-08-14|midday-ai / midday|finance,typescript,nextjs|https://github.com/midday-ai/midday
-2025-08-14|idosal / git-mcp|git,ai,mcp|https://github.com/idosal/git-mcp
-2025-08-14|Hitting $100M ARR in eight months with an AI software builder|artificial-intelligence,saas,startup|https://www.indiehackers.com/post/ONMaxjB3rix2PnBCnrDr
-2025-08-14|openai / codex|AI,CLI,Coding|https://github.com/openai/codex
-2025-08-14|nomic-ai / gpt4all|ai-chat,llm-inference|https://github.com/nomic-ai/gpt4all
-2025-08-14|microsoft / generative-ai-for-beginners|ai,azure,transformers|https://github.com/microsoft/generative-ai-for-beginners
-2025-08-14|fastapi / full-stack-fastapi-template|react,python,letsencrypt|https://github.com/fastapi/full-stack-fastapi-template
-2025-08-14|mendableai / firecrawl|markdown,crawler,data|https://github.com/mendableai/firecrawl
-2025-08-14|umami-software / umami|charts,statistics,analytics|https://github.com/umami-software/umami
-2025-08-14|tadata-org / fastapi_mcp|ai,authentication,mcp|https://github.com/tadata-org/fastapi_mcp
-2025-08-14|trailofbits/buttercup: A Cyber Reasoning System for Automated Vulnerability Detection and Patching|cybersecurity,AI,vulnerability-detection|https://github.com/trailofbits/buttercup
-2025-08-14|patchy631 / ai-engineering-hub|machine-learning,ai,mcp|https://github.com/patchy631/ai-engineering-hub
-2025-08-14|nFactorial AI|Education,Artificial Intelligence,Online Learning|https://www.producthunt.com/products/nfactorial-ai-6
-2025-08-14|SuperCraft|Design Tools,Productivity,Artificial Intelligence|https://www.producthunt.com/products/supercraft
-2025-08-14|Embedding Atlas|Open Source,GitHub,Apple|https://www.producthunt.com/products/embedding-atlas
-2025-08-14|Inbox Hero|Email,Productivity,Artificial Intelligence|https://www.producthunt.com/products/inbox-hero
-2025-08-14|Saleslift|Sales,SaaS,Artificial Intelligence|https://www.producthunt.com/products/saleslift
-2025-08-14|Hyprnote|Productivity,Notes,Meetings|https://www.producthunt.com/products/hyprnote
-2025-08-14|menloresearch / jan|self-hosted,gpt,tauri|https://github.com/menloresearch/jan
-2025-08-14|midday-ai / midday|finance,typescript,nextjs|https://github.com/midday-ai/midday
-2025-08-14|idosal / git-mcp|git,ai,mcp|https://github.com/idosal/git-mcp
-2025-08-14|Hitting $100M ARR in eight months with an AI software builder|artificial-intelligence,saas,startup|https://www.indiehackers.com/post/ONMaxjB3rix2PnBCnrDr
-2025-08-14|openai / codex|AI,CLI,Coding|https://github.com/openai/codex
-2025-08-14|nomic-ai / gpt4all|ai-chat,llm-inference|https://github.com/nomic-ai/gpt4all
-2025-08-14|microsoft / generative-ai-for-beginners|ai,azure,transformers|https://github.com/microsoft/generative-ai-for-beginners
-2025-08-14|fastapi / full-stack-fastapi-template|react,python,letsencrypt|https://github.com/fastapi/full-stack-fastapi-template
-2025-08-14|mendableai / firecrawl|markdown,crawler,data|https://github.com/mendableai/firecrawl
-2025-08-14|umami-software / umami|charts,statistics,analytics|https://github.com/umami-software/umami
-2025-08-14|tadata-org / fastapi_mcp|ai,authentication,mcp|https://github.com/tadata-org/fastapi_mcp
-2025-08-14|trailofbits/buttercup: A Cyber Reasoning System for Automated Vulnerability Detection and Patching|cybersecurity,AI,vulnerability-detection|https://github.com/trailofbits/buttercup
-2025-08-14|patchy631 / ai-engineering-hub|machine-learning,ai,mcp|https://github.com/patchy631/ai-engineering-hub
-2025-08-14|nFactorial AI|Education,Artificial Intelligence,Online Learning|https://www.producthunt.com/products/nfactorial-ai-6
-2025-08-14|SuperCraft|Design Tools,Productivity,Artificial Intelligence|https://www.producthunt.com/products/supercraft
-2025-08-14|Embedding Atlas|Open Source,GitHub,Apple|https://www.producthunt.com/products/embedding-atlas
-2025-08-14|Inbox Hero|Email,Productivity,Artificial Intelligence|https://www.producthunt.com/products/inbox-hero
-2025-08-14|Saleslift|Sales,SaaS,Artificial Intelligence|https://www.producthunt.com/products/saleslift
-2025-08-14|Hyprnote|Productivity,Notes,Meetings|https://www.producthunt.com/products/hyprnote
-2025-08-14|menloresearch / jan|self-hosted,gpt,tauri|https://github.com/menloresearch/jan
-2025-08-14|midday-ai / midday|finance,typescript,nextjs|https://github.com/midday-ai/midday
-2025-08-14|idosal / git-mcp|git,ai,mcp|https://github.com/idosal/git-mcp
-2025-08-14|Hitting $100M ARR in eight months with an AI software builder|artificial-intelligence,saas,startup|https://www.indiehackers.com/post/ONMaxjB3rix2PnBCnrDr
-2025-08-14|openai / codex|AI,CLI,Coding|https://github.com/openai/codex
-2025-08-15|pathwaycom / pathway|python,rust,streaming|https://github.com/pathwaycom/pathway
-2025-08-15|bytedance / UI-TARS-desktop|agent,mcp,vision|https://github.com/bytedance/UI-TARS-desktop
-2025-08-15|redis / go-redis|go,redis,golang|https://github.com/redis/go-redis
-2025-08-15|colmap/colmap: COLMAP - Structure-from-Motion and Multi-View Stereo|computer-vision,geometry,structure-from-motion|https://github.com/colmap/colmap
-2025-08-15|hashicorp / terraform|cloud,graph,terraform|https://github.com/hashicorp/terraform
-2025-08-15|angular/components: Component infrastructure and Material Design components for Angular|angular,material,material-design|https://github.com/angular/components
-2025-08-15|ostris / ai-toolkit|AI,Machine Learning,Diffusion Models|https://github.com/ostris/ai-toolkit
-2025-08-15|external-secrets / external-secrets|kubernetes,secrets-management,operator|https://github.com/external-secrets/external-secrets
-2025-08-15|Snowglobe|Artificial Intelligence,Security|https://www.producthunt.com/products/snowglobe
-2025-08-15|Anything|Artificial Intelligence,No-Code,Vibe coding|https://www.producthunt.com/products/anything-2
-2025-08-15|CoSupport AI|Customer Communication,SaaS,Artificial Intelligence|https://cosupport.ai/?ref=producthunt
-2025-08-15|Comet by Perplexity|Mac,Artificial Intelligence,Search|https://www.producthunt.com/products/perplexity-ai
-2025-08-15|LangRead|eBook Reader,Education,Languages|https://www.producthunt.com/products/langread
-2025-08-15|Macaron AI|Artificial Intelligence,Bots,Lifestyle|https://www.producthunt.com/products/macaron-ai
-2025-08-15|DeepReel|Marketing,Video|https://www.producthunt.com/products/deepreel
-2025-08-15|Hitting $12k/mo with a boilerplate|SaaS,Bootstrapping,Indie Hacking|https://www.indiehackers.com/post/tech/hitting-12k-mo-with-a-boilerplate-j2n9ECQvdJBw9Gvf4TKA
-2025-08-15|Show HN: Yet another memory system for LLMs|compression,memory,localstorage|https://github.com/trvon/yams
-2025-08-15|From weekend experiment to $20k/mo business|Indie Hackers,Startup,SaaS|https://www.indiehackers.com/post/tech/from-weekend-experiment-to-20k-mo-business-aP4YP2DouOUuicCtcnCB
-2025-08-15|Dub Partners|Marketing,SaaS,Affiliate marketing|https://www.producthunt.com/products/dub
+2025-08-16|manycore-research / SpatialLM|point-clouds,scene-understanding,mllm|https://github.com/manycore-research/SpatialLM
+2025-08-16|microsoft / magentic-ui|ui,ai,agents|https://github.com/microsoft/magentic-ui
+2025-08-16|datalab-to / marker|PDF,Markdown,JSON|https://github.com/datalab-to/marker
+2025-08-16|ubicloud / ubicloud|ruby,linux,kubernetes|https://github.com/ubicloud/ubicloud
+2025-08-16|tadata-org / fastapi_mcp|ai,authentication,mcp|https://github.com/tadata-org/fastapi_mcp
+2025-08-16|budtmo/docker-android: Android in docker solution with noVNC supported and video recording|android,emulator,docker|https://github.com/budtmo/docker-android
+2025-08-16|redis / go-redis|go,redis,golang|https://github.com/redis/go-redis
+2025-08-16|qarmin / czkawka|rust,gtk-rs,duplicates|https://github.com/qarmin/czkawka
+2025-08-16|Kuse|Productivity,SaaS,Artificial Intelligence|https://www.producthunt.com/products/kuse
+2025-08-16|stagewise|Developer Tools,Web Design,Vibe coding|https://www.producthunt.com/products/stagewise-2
+2025-08-16|Move AI: Your Personal AI Moving Concierge|Moving & Storage,Artificial Intelligence,Home services|https://www.producthunt.com/products/move-ai-your-ai-moving-assistant
+2025-08-16|GPT-5 SEO Brand Visiblity|Analytics,Marketing,SEO|https://www.producthunt.com/products/gpt-5-seo-brand-visiblity
+2025-08-16|PersonaRoll|Social Media,Marketing automation,Influencer marketing|https://www.producthunt.com/products/personaroll
+2025-08-16|GitRanks|Analytics,GitHub|https://www.producthunt.com/products/gitranks
+2025-08-16|Readdit Later|Chrome Extensions,Productivity,reddit|https://www.producthunt.com/products/readdit-later
+2025-08-16|Wan2.2 — Text-to-Image Generation|AI,Text-to-Image,Wan2.2|https://www.indiehackers.com/post/wan2-2-text-to-image-generation-e766df96fe
+2025-08-16|How I accidentally became PureGym's unofficial Apple Wallet developer|Reverse Engineering,PassKit,Vapor|https://drobinin.com/posts/how-i-accidentally-became-puregyms-unofficial-apple-wallet-developer/
+2025-08-16|From failure to $1M ARR in 8 months|AI,SaaS,Startup|https://www.indiehackers.com/post/tech/from-failure-to-1m-arr-in-8-months-oA0AqL4jY25lxrQ4uGBl
+2025-08-16|Claude Utils|Productivity,Developer Tools,Artificial Intelligence|https://www.producthunt.com/products/claude-utils
